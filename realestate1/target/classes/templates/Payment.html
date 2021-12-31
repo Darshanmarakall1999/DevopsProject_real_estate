@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:margin="http://www.w3.org/1999/xhtml" xmlns:padding="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Payment Form</title>
+    <link rel="stylesheet" href="payment_styles.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <head>
+
+</head>
+<body>
+<style>
+body {
+  background-image:url('payment.jpg');
+    background-size:cover;
+     </style>
+<div class="con" style="padding-top:20px">
+<form>
+    <div class="container">
+        <h1>Confirm Your Payment</h1>
+        <div class="first-row">
+            <div class="owner">
+                <h3>Owner</h3>
+                <div class="input-field">
+                    <input type="text" id ="owner"class="form-control">
+                </div>
+            </div>
+            <div class="cvv">
+                <h3>CVV</h3>
+                <div class="input-field">
+                    <input type="password" id="password"class="form-control">
+                </div>
+            </div>
+        </div>
+        <div class="second-row">
+            <div class="card-number">
+                <h3>Card Number</h3>
+                <div class="input-field">
+                    <input type="text" id="cardno"class="form-control">
+                </div>
+            </div>
+        </div>
+        <div class="third-row">
+            <h3>Card Number</h3>
+            <div class="selection">
+                <div class="date">
+                    <select name="months" id="months"class="form-control">
+                        <option value="Jan">Jan</option>
+                        <option value="Feb">Feb</option>
+                        <option value="Mar">Mar</option>
+                        <option value="Apr">Apr</option>
+                        <option value="May">May</option>
+                        <option value="Jun">Jun</option>
+                        <option value="Jul">Jul</option>
+                        <option value="Aug">Aug</option>
+                        <option value="Sep">Sep</option>
+                        <option value="Oct">Oct</option>
+                        <option value="Nov">Nov</option>
+                        <option value="Dec">Dec</option>
+                      </select>
+                      <select name="years" id="years"class="form-control">
+                        <option value="2020">2020</option>
+                        <option value="2019">2019</option>
+                        <option value="2018">2018</option>
+                        <option value="2017">2017</option>
+                        <option value="2016">2016</option>
+                        <option value="2015">2015</option>
+                      </select>
+                </div>
+                <div class="cards">
+                    <img src="mc.png" alt="">
+                    <img src="vi.png" alt="">
+                    <img src="pp.png" alt="">
+                </div>
+            </div>    
+        </div>
+        <button type="button" id="confirm" class="btn btn-primary">Confirm</button>
+    </div>
+</form>
+</div>
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script>
+$("#confirm").click(function(){
+var owner=$("#owner").val();
+var password=$("#password").val();
+var cardno=$("#cardno").val();
+var months=$("#months").val();
+var years=$("#years").val();
+if(owner == '' || password == '' || cardno == '' || months == '' || years == ''){
+swal({
+  title: "Fields Empty!",
+  text: "Please check the missing field!",
+  icon: "warning",
+  button: "OK!",
+});
+}else{
+  swal({
+  title: "Successfully done!",
+  text: "You clicked the button!",
+  icon: "success",
+  button:"Thanku:)",
+});
+}
+});
+</script>
+<form id="form1" action="property-detail.html">
+    <input type="submit" value="Go back">
+</form>
+
+</body>
+</html>
